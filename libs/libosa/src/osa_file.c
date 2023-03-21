@@ -2,7 +2,7 @@
 
 #include <osa_file.h>
 
-#define OSA_DEBUG_FILE
+//#define OSA_DEBUG_FILE
 
 int OSA_fileReadFile(char *fileName, Uint8 *addr, Uint32 readSize, Uint32 *actualReadSize)
 {

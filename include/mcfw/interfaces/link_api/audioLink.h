@@ -43,7 +43,7 @@ extern "C" {
 /**
     \brief Enable high level prints related to audio 
 */
-#define     AUDIO_ENABLE_INFO_PRINT
+//#define     AUDIO_ENABLE_INFO_PRINT
 
 /**
     \brief Enable error prints related to audio 

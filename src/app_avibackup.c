@@ -24,7 +24,7 @@ static BaContext_t gBaCtx ;
 static	stNSDVR_FrameInfo frameinfo;
 
 //////////////////////////////////////////////////////////
-#define BACKUP_DEBUG
+//#define BACKUP_DEBUG
 
 #ifdef BACKUP_DEBUG
 #define TRACE_BACKUP(msg, args...)  printf("[BACKUP] - " msg, ##args)

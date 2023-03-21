@@ -41,6 +41,8 @@
   #define UTILS_assert(x)  
   #define OSA_DEBUG    
   #define OSA_DEBUG_WAIT  
+
+  #define OSA_COMPILETIME_ASSERT(x)
 #endif
 
 // printf wrapper that can be used to display errors. Prefixes all text with

@@ -379,9 +379,9 @@ Int32   Audio_startCapture(Audio_CaptureParams *pPrm)
     for (ch=0; ch<pPrm->numChannels; ch++)
     {
         AUDIO_INFO_PRINT (("capPtr: %X <%d> encBuf: %X <%d> encOutBuf: %X <%d> encHdl: %X\n", 
-                (UInt32)gAcapContextInt.chData[ch], gAcapContextInt.chDataMaxSize[ch],
-                (UInt32)gEncBuf[ch], gEncBufMaxSize[ch],
-                (UInt32)gIntEncodeBuffer[ch], gIntEncBufSize[ch],
+                (UInt32)*gAcapContextInt.chData[ch], gAcapContextInt.chDataMaxSize[ch],
+                (UInt32)*gEncBuf[ch], gEncBufMaxSize[ch],
+                (UInt32)*gIntEncodeBuffer[ch], gIntEncBufSize[ch],
                 (UInt32)gEncHandle[ch]));
     }
     return  status;
@@ -479,7 +479,7 @@ Void *Audio_captureTaskFxn(Void * prm)
                     ctx->acapStats.errorCnt,
                     ctx->acapStats.lastError,
                     snd_strerror(ctx->acapStats.lastError),
-                    (UInt32)&ctx->chDataWrIdx[0], ctx->chDataWrIdx[0]
+                    (UInt32)ctx->chDataWrIdx[0], ctx->chDataWrIdx[0]
                     ));
         }
         if ((ctx->captureLen) && (ctx->taskExitFlag == FALSE))
@@ -650,7 +650,7 @@ Int32 Audio_doEncode (UInt8 chNum, Audio_getDataParams * pPrm)
             {
                 AUDIO_ERROR_PRINT (("AUDIO: ENC -> Encode failed [Enc:%d/ Failed: %d] - input %X <%X %X>, output %d, iter %d\n", 
                         gTotalFramesEncoded[chNum], gTotalFramesFailed[chNum],
-                        (UInt32)input, (UInt32)gWriteBuf[chNum], (UInt32)gReadBuf[chNum], prm.outBuf.dataBufSize, iter));
+                        (UInt32)*input, (UInt32)*gWriteBuf[chNum], (UInt32)*gReadBuf[chNum], prm.outBuf.dataBufSize, iter));
                 gTotalFramesFailed[chNum] ++;
             }
             else
