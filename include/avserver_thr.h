@@ -1,0 +1,16 @@
+
+#ifndef _AVSERVER_THR_H_
+#define _AVSERVER_THR_H_
+
+#include <osa.h>
+
+#define VIDEO_STREAM_THR_PRI        (OSA_THR_PRI_MAX-1)
+#define AVSERVER_MAIN_THR_PRI       (OSA_THR_PRI_MAX-1)
+
+#define VIDEO_STACK_SIZE_DEFAULT    (0*KB)					//(20*KB)
+
+#define VIDEO_STREAM_STACK_SIZE        (VIDEO_STACK_SIZE_DEFAULT)
+#define AVSERVER_MAIN_STACK_SIZE       (VIDEO_STACK_SIZE_DEFAULT)
+
+#endif  /*  _AVSERVER_THR_H_ */
+
